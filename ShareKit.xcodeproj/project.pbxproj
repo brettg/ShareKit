@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		07FE2747135FA99000E05A8E /* SHKPosterous.m in Sources */ = {isa = PBXBuildFile; fileRef = 07FE2746135FA99000E05A8E /* SHKPosterous.m */; };
 		1D60589B0D05DD56006BFB54 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; };
 		1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
 		1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
@@ -106,11 +105,10 @@
 		43D1DEF011D5CDD200550D75 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43D1DEEF11D5CDD200550D75 /* SystemConfiguration.framework */; };
 		43EF406E11D3FFF800B1F700 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43EF406D11D3FFF800B1F700 /* Security.framework */; };
 		43FF9C7412270E9F00ADE53C /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 43FF9C7212270E9F00ADE53C /* Localizable.strings */; };
+		8B3A939C13F4925100A6DC78 /* SHKPosterous.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B3A939B13F4925100A6DC78 /* SHKPosterous.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		07FE2745135FA99000E05A8E /* SHKPosterous.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHKPosterous.h; sourceTree = "<group>"; };
-		07FE2746135FA99000E05A8E /* SHKPosterous.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHKPosterous.m; sourceTree = "<group>"; };
 		1D30AB110D05D00D00671497 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		1D6058910D05DD3D006BFB54 /* ShareKit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ShareKit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1DF5F4DF0D08C38300B7A737 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -311,6 +309,8 @@
 		43EF406D11D3FFF800B1F700 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		43FF9C7312270E9F00ADE53C /* en */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = en; path = Classes/ShareKit/Localization/en.lproj/Localizable.strings; sourceTree = SOURCE_ROOT; };
 		43FF9C7512270EB900ADE53C /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = Classes/ShareKit/Localization/de.lproj/Localizable.strings; sourceTree = SOURCE_ROOT; };
+		8B3A939A13F4925100A6DC78 /* SHKPosterous.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SHKPosterous.h; path = Posterous/SHKPosterous.h; sourceTree = "<group>"; };
+		8B3A939B13F4925100A6DC78 /* SHKPosterous.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SHKPosterous.m; path = Posterous/SHKPosterous.m; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* ShareKit-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "ShareKit-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -334,8 +334,8 @@
 		07FE2744135FA98000E05A8E /* Posterous */ = {
 			isa = PBXGroup;
 			children = (
-				07FE2745135FA99000E05A8E /* SHKPosterous.h */,
-				07FE2746135FA99000E05A8E /* SHKPosterous.m */,
+				8B3A939A13F4925100A6DC78 /* SHKPosterous.h */,
+				8B3A939B13F4925100A6DC78 /* SHKPosterous.m */,
 			);
 			name = Posterous;
 			sourceTree = "<group>";
@@ -1058,7 +1058,6 @@
 				4379F2C11291AC9700D2A41E /* SHKEvernote.m in Sources */,
 				4379F2EA1291AE5700D2A41E /* NSData+md5.m in Sources */,
 				4379F3B21291C45700D2A41E /* SHKTextMessage.m in Sources */,
-				07FE2747135FA99000E05A8E /* SHKPosterous.m in Sources */,
 				3B06B64412EF841800FC0583 /* Facebook.m in Sources */,
 				3B06B64612EF841800FC0583 /* FBDialog.m in Sources */,
 				3B06B64712EF841800FC0583 /* FBLoginDialog.m in Sources */,
@@ -1070,6 +1069,7 @@
 				3B06B64D12EF841800FC0583 /* SBJsonParser.m in Sources */,
 				3B06B64E12EF841800FC0583 /* SBJsonWriter.m in Sources */,
 				3B06B65312EF842800FC0583 /* SHKFacebook.m in Sources */,
+				8B3A939C13F4925100A6DC78 /* SHKPosterous.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
