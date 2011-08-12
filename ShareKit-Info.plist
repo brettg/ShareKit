@@ -35,6 +35,7 @@
 			<string></string>
 			<key>CFBundleURLSchemes</key>
 			<array>
+				<string>sharekitexample</string>
 				<string>fb[appId]</string>
 			</array>
 		</dict>

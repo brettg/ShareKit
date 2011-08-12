@@ -3,7 +3,25 @@
 //  ShareKit
 //
 //  Created by Brett Gibson on 8/11/11.
-//  Copyright 2011 __MyCompanyName__. All rights reserved.
+//
+//  Permission is hereby granted, free of charge, to any person obtaining a copy
+//  of this software and associated documentation files (the "Software"), to deal
+//  in the Software without restriction, including without limitation the rights
+//  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+//  copies of the Software, and to permit persons to whom the Software is
+//  furnished to do so, subject to the following conditions:
+//
+//  The above copyright notice and this permission notice shall be included in
+//  all copies or substantial portions of the Software.
+//
+//  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+//  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+//  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+//  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+//  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+//  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+//  THE SOFTWARE.
+//
 //
 
 #import "SHKOAuth2Sharer.h"
@@ -13,12 +31,26 @@
 #import "NXOAuth2AccessToken.h"
 
 @interface SHKOAuth2Sharer ()
++ (void)registerSubclass:(Class)subclass;
 - (void)setupClient;
 @end
 
 @implementation SHKOAuth2Sharer
 
+// we keep track of these for handleOpenURL 
+static NSMutableSet *oauth2Subclasses;
+
 @synthesize oauthClient = _oauthClient;
+
++ (void)initialize{
+  if(self == [SHKOAuth2Sharer class]){
+    oauth2Subclasses = [[NSMutableSet alloc] init];
+  }else{
+    // if the subclass doesn't call initialize
+    // then take this opportunity to register them automatically
+    [self registerSubclass:self];
+  }
+}
 
 #pragma mark - init dealloc and setup
 - (void)dealloc{
@@ -61,6 +93,21 @@
   return nil;
 }
 
+#pragma mark - other class methods
++ (void)registerSubclass:(Class)subclass{
+  [oauth2Subclasses addObject:subclass];
+}
+
++ (BOOL)handleOpenURL:(NSURL *)url{
+  for(Class c in oauth2Subclasses){
+    SHKOAuth2Sharer *inst = [[[c alloc] init] autorelease];
+    if([inst handleOpenURL:url]){
+      return YES;
+    }
+  }
+  return NO;
+}
+
 #pragma mark - SHKSharer class methods
 
 + (void)logout{
@@ -85,8 +132,8 @@
 
 #pragma mark - public methods
 
-- (BOOL)handleOpenURL:(NSURL *)url{
-  if (![[url baseURL] isEqual:[self.class redirectURL]]) {
+- (BOOL)handleOpenURL:(NSURL *)url{  
+  if (![[url absoluteString] hasPrefix:[[self.class redirectURL] absoluteString]]) {
     return NO;
   }
   

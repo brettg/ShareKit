@@ -11,6 +11,7 @@
 
 #import "SHKReadItLater.h"
 #import "SHKFacebook.h"
+#import "SHKOAuth2Sharer.h"
 
 @implementation ShareKitAppDelegate
 
@@ -46,8 +47,12 @@
 }
 
 - (BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url {
-	SHKFacebook *facebookSharer = [[[SHKFacebook alloc] init] autorelease];
-	return [[facebookSharer facebook] handleOpenURL:url];
+  if([SHKOAuth2Sharer handleOpenURL:url]){
+    return YES;
+  }else{
+    SHKFacebook *facebookSharer = [[[SHKFacebook alloc] init] autorelease];
+    return [[facebookSharer facebook] handleOpenURL:url];
+  }
 }
 
 

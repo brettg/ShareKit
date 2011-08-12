@@ -118,6 +118,8 @@
 		8B3A93C213F4936D00A6DC78 /* NXOAuth2PostBodyPart.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B3A93B513F4936D00A6DC78 /* NXOAuth2PostBodyPart.m */; };
 		8B3A93C313F4936D00A6DC78 /* NXOAuth2PostBodyStream.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B3A93B713F4936D00A6DC78 /* NXOAuth2PostBodyStream.m */; };
 		8B3A93C613F4947E00A6DC78 /* SHKOAuth2Sharer.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B3A93C513F4947E00A6DC78 /* SHKOAuth2Sharer.m */; };
+		8B3A93E113F4BC9000A6DC78 /* SHKDeviantArt.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B3A93E013F4BC9000A6DC78 /* SHKDeviantArt.m */; };
+		8B3A93E413F4BE0500A6DC78 /* SHKSharer+MultipartPost.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B3A93E313F4BE0500A6DC78 /* SHKSharer+MultipartPost.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -350,6 +352,10 @@
 		8B3A93B813F4936D00A6DC78 /* NXOAuth2TrustDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NXOAuth2TrustDelegate.h; sourceTree = "<group>"; };
 		8B3A93C413F4947E00A6DC78 /* SHKOAuth2Sharer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHKOAuth2Sharer.h; sourceTree = "<group>"; };
 		8B3A93C513F4947E00A6DC78 /* SHKOAuth2Sharer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHKOAuth2Sharer.m; sourceTree = "<group>"; };
+		8B3A93DF13F4BC9000A6DC78 /* SHKDeviantArt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHKDeviantArt.h; sourceTree = "<group>"; };
+		8B3A93E013F4BC9000A6DC78 /* SHKDeviantArt.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHKDeviantArt.m; sourceTree = "<group>"; };
+		8B3A93E213F4BE0500A6DC78 /* SHKSharer+MultipartPost.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SHKSharer+MultipartPost.h"; sourceTree = "<group>"; };
+		8B3A93E313F4BE0500A6DC78 /* SHKSharer+MultipartPost.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "SHKSharer+MultipartPost.m"; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* ShareKit-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "ShareKit-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -651,6 +657,8 @@
 				43A5367511DBE3B9004A1712 /* SHKOAuthSharer.m */,
 				8B3A93C413F4947E00A6DC78 /* SHKOAuth2Sharer.h */,
 				8B3A93C513F4947E00A6DC78 /* SHKOAuth2Sharer.m */,
+				8B3A93E213F4BE0500A6DC78 /* SHKSharer+MultipartPost.h */,
+				8B3A93E313F4BE0500A6DC78 /* SHKSharer+MultipartPost.m */,
 			);
 			path = "Base Sharer Classes";
 			sourceTree = "<group>";
@@ -810,6 +818,7 @@
 		43A536C011DBE3B9004A1712 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				8B3A93DE13F4BC5900A6DC78 /* deviantArt */,
 				43A536C111DBE3B9004A1712 /* Delicious */,
 				4379F2891291AC9700D2A41E /* Evernote */,
 				43A536C411DBE3B9004A1712 /* Facebook */,
@@ -999,6 +1008,15 @@
 			path = OAuth2Client;
 			sourceTree = "<group>";
 		};
+		8B3A93DE13F4BC5900A6DC78 /* deviantArt */ = {
+			isa = PBXGroup;
+			children = (
+				8B3A93DF13F4BC9000A6DC78 /* SHKDeviantArt.h */,
+				8B3A93E013F4BC9000A6DC78 /* SHKDeviantArt.m */,
+			);
+			path = deviantArt;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1172,6 +1190,8 @@
 				8B3A93C213F4936D00A6DC78 /* NXOAuth2PostBodyPart.m in Sources */,
 				8B3A93C313F4936D00A6DC78 /* NXOAuth2PostBodyStream.m in Sources */,
 				8B3A93C613F4947E00A6DC78 /* SHKOAuth2Sharer.m in Sources */,
+				8B3A93E113F4BC9000A6DC78 /* SHKDeviantArt.m in Sources */,
+				8B3A93E413F4BE0500A6DC78 /* SHKSharer+MultipartPost.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -115,6 +115,38 @@
 
 
 /*
+ OAuth2 Sharers Below - Some extra considerations (similiar to Facebook, see above)
+
+ The URL scheme that needs to be added to info.plist will be determined by you or the API provider.
+ 
+ application:handleOpenURL: needs to be added to the AppDelegate. The SHKOAuth2Sharer class
+ has a convenience method to handle all of it's subclasses.
+ 
+ For example:
+ 
+ - (BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url {
+   return [SHKOAuth2Sharer handleOpenURL:url];
+ }
+ 
+ Example if you're also using Facebook:
+ 
+ - (BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url {
+   if([SHKOAuth2Sharer handleOpenURL:url]){
+     return YES;
+   }else{
+     SHKFacebook *facebookSharer = [[[SHKFacebook alloc] init] autorelease];
+     return [[facebookSharer facebook] handleOpenURL:url];
+   }
+ }
+ 
+*/
+// deviantArt - http://www.deviantart.com/developers/
+#define SHKDeviantArtClientID @""
+#define SHKDeviantArtClientSecret @""
+#define SHKDeviantArtRedirectURL @"" // make up your own and make sure it matches what's in Info.plist
+
+
+/*
  UI Configuration : Basic
  ------
  These provide controls for basic UI settings.  For more advanced configuration see below.
