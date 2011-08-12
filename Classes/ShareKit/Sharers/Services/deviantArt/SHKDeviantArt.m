@@ -42,6 +42,10 @@ NSString *const kDAStashURL = @"https://www.deviantart.com/api/draft10/submit";
 	return @"deviantART";
 }
 
++ (BOOL)canShare{
+  return [SHKDeviantArtClientID length] > 0;
+}
+
 + (BOOL)canShareImage{
 	return YES;
 }
