@@ -120,6 +120,7 @@
 		8B3A93C613F4947E00A6DC78 /* SHKOAuth2Sharer.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B3A93C513F4947E00A6DC78 /* SHKOAuth2Sharer.m */; };
 		8B3A93E113F4BC9000A6DC78 /* SHKDeviantArt.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B3A93E013F4BC9000A6DC78 /* SHKDeviantArt.m */; };
 		8B3A93E413F4BE0500A6DC78 /* SHKSharer+MultipartPost.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B3A93E313F4BE0500A6DC78 /* SHKSharer+MultipartPost.m */; };
+		8BE7C0C013F5A9680020C24C /* SHKInstagramCameraPlus.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BE7C0BF13F5A9680020C24C /* SHKInstagramCameraPlus.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -356,6 +357,8 @@
 		8B3A93E013F4BC9000A6DC78 /* SHKDeviantArt.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHKDeviantArt.m; sourceTree = "<group>"; };
 		8B3A93E213F4BE0500A6DC78 /* SHKSharer+MultipartPost.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SHKSharer+MultipartPost.h"; sourceTree = "<group>"; };
 		8B3A93E313F4BE0500A6DC78 /* SHKSharer+MultipartPost.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "SHKSharer+MultipartPost.m"; sourceTree = "<group>"; };
+		8BE7C0BE13F5A9680020C24C /* SHKInstagramCameraPlus.h */ = {isa = PBXFileReference; fileEncoding = 4; path = SHKInstagramCameraPlus.h; sourceTree = "<group>"; };
+		8BE7C0BF13F5A9680020C24C /* SHKInstagramCameraPlus.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHKInstagramCameraPlus.m; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* ShareKit-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "ShareKit-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -818,6 +821,7 @@
 		43A536C011DBE3B9004A1712 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				8BE7C0BC13F5A8DB0020C24C /* InstagramCameraPlus */,
 				8B3A93DE13F4BC5900A6DC78 /* deviantArt */,
 				43A536C111DBE3B9004A1712 /* Delicious */,
 				4379F2891291AC9700D2A41E /* Evernote */,
@@ -1017,6 +1021,15 @@
 			path = deviantArt;
 			sourceTree = "<group>";
 		};
+		8BE7C0BC13F5A8DB0020C24C /* InstagramCameraPlus */ = {
+			isa = PBXGroup;
+			children = (
+				8BE7C0BE13F5A9680020C24C /* SHKInstagramCameraPlus.h */,
+				8BE7C0BF13F5A9680020C24C /* SHKInstagramCameraPlus.m */,
+			);
+			path = InstagramCameraPlus;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1192,6 +1205,7 @@
 				8B3A93C613F4947E00A6DC78 /* SHKOAuth2Sharer.m in Sources */,
 				8B3A93E113F4BC9000A6DC78 /* SHKDeviantArt.m in Sources */,
 				8B3A93E413F4BE0500A6DC78 /* SHKSharer+MultipartPost.m in Sources */,
+				8BE7C0C013F5A9680020C24C /* SHKInstagramCameraPlus.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

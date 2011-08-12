@@ -71,6 +71,7 @@
 #pragma mark View Management
 
 + (void)setRootViewController:(UIViewController *)vc;
+- (void)findRootViewController;
 - (void)showViewController:(UIViewController *)vc;
 - (void)hideCurrentViewControllerAnimated:(BOOL)animated;
 - (void)viewWasDismissed;
