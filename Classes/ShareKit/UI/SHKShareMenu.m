@@ -30,6 +30,8 @@
 #import "SHKSharer.h"
 #import "SHKCustomShareMenuCell.h"
 
+NSUInteger const kSHKMenuLogoutSection = 2;
+
 @implementation SHKShareMenu
 
 @synthesize item;
@@ -90,6 +92,8 @@
 	self.tableData = [NSMutableArray arrayWithCapacity:0];
 	[tableData addObject:[self section:@"actions"]];
 	[tableData addObject:[self section:@"services"]];
+  [tableData addObject:[NSArray arrayWithObject:[NSDictionary dictionaryWithObject:@"Logout of All" 
+                                                                            forKey:@"name"]]];
 		
 	// Handling Excluded items
 	// If in editing mode, show them
@@ -208,13 +212,14 @@
     if (cell == nil)
 	{
         cell = [[[SHKCustomShareMenuCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
-		cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+		if (indexPath.section != kSHKMenuLogoutSection)
+      cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
 	}
     
 	NSDictionary *rowData = [self rowDataAtIndexPath:indexPath];
 	cell.textLabel.text = [rowData objectForKey:@"name"];
 	
-	if (cell.editingAccessoryView == nil)
+	if (cell.editingAccessoryView == nil && indexPath.section != kSHKMenuLogoutSection)
 	{
 		UISwitch *toggle = [[UISwitch alloc] initWithFrame:CGRectZero];
 		toggle.userInteractionEnabled = NO;
@@ -263,9 +268,19 @@
 	
 	else 
 	{
-		[NSClassFromString([rowData objectForKey:@"className"]) shareItem:item];
+    if(indexPath.section == kSHKMenuLogoutSection){
+      [SHK logoutOfAll];
+      [[[[UIAlertView alloc] initWithTitle:@"Logged out."
+                                 message:nil 
+                                delegate:nil
+                       cancelButtonTitle:nil
+                       otherButtonTitles:@"OK", nil] autorelease] show];
+      [self.tableView deselectRowAtIndexPath:indexPath animated:NO];
+    }else{
+      [NSClassFromString([rowData objectForKey:@"className"]) shareItem:item];
 		
-		[[SHK currentHelper] hideCurrentViewControllerAnimated:YES];
+      [[SHK currentHelper] hideCurrentViewControllerAnimated:YES];
+    }
 	}
 }
 
