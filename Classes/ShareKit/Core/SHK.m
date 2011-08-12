@@ -287,27 +287,30 @@ BOOL SHKinit;
 
 + (NSArray *)favoriteSharersForType:(SHKShareType)type
 {	
-	NSArray *favoriteSharers = [[NSUserDefaults standardUserDefaults] objectForKey:[NSString stringWithFormat:@"%@%i", SHK_FAVS_PREFIX_KEY, type]];
+	NSArray *favoriteSharers = [[NSUserDefaults standardUserDefaults] 
+                              objectForKey:[NSString stringWithFormat:@"%@%i", SHK_FAVS_PREFIX_KEY, 
+                                                                      type]];
 		
 	// set defaults
-	if (favoriteSharers == nil)
-	{
-		switch (type) 
-		{
+	if (favoriteSharers == nil){ 
+    NSString *favPlist = [[[NSBundle mainBundle] resourcePath]
+                          stringByAppendingPathComponent:@"SHKFavoriteSharers.plist"];
+    NSDictionary *favDictionary = [NSDictionary dictionaryWithContentsOfFile:favPlist];
+		switch (type) {
 			case SHKShareTypeURL:
-				favoriteSharers = [NSArray arrayWithObjects:@"SHKTwitter",@"SHKFacebook",@"SHKReadItLater",nil];
+				favoriteSharers = [favDictionary objectForKey:@"SHKShareTypeURL"];
 				break;
 				
 			case SHKShareTypeImage:
-				favoriteSharers = [NSArray arrayWithObjects:@"SHKMail",@"SHKFacebook",@"SHKCopy",nil];
+				favoriteSharers = [favDictionary objectForKey:@"SHKShareTypeImage"];
 				break;
 				
 			case SHKShareTypeText:
-				favoriteSharers = [NSArray arrayWithObjects:@"SHKMail",@"SHKTwitter",@"SHKFacebook",nil];
+				favoriteSharers = [favDictionary objectForKey:@"SHKShareTypeText"];
 				break;
 				
 			case SHKShareTypeFile:
-				favoriteSharers = [NSArray arrayWithObjects:@"SHKMail",@"SHKEvernote",nil];
+				favoriteSharers = [favDictionary objectForKey:@"SHKShareTypeFile"];
 				break;
 			
 			default:

@@ -105,6 +105,7 @@
 		43D1DEF011D5CDD200550D75 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43D1DEEF11D5CDD200550D75 /* SystemConfiguration.framework */; };
 		43EF406E11D3FFF800B1F700 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43EF406D11D3FFF800B1F700 /* Security.framework */; };
 		43FF9C7412270E9F00ADE53C /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 43FF9C7212270E9F00ADE53C /* Localizable.strings */; };
+		8B1B59BB13F5EEC700DD5360 /* SHKFavoriteSharers.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8B1B59BA13F5EEC700DD5360 /* SHKFavoriteSharers.plist */; };
 		8B3A939C13F4925100A6DC78 /* SHKPosterous.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B3A939B13F4925100A6DC78 /* SHKPosterous.m */; };
 		8B3A93B913F4936D00A6DC78 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 8B3A939F13F4936D00A6DC78 /* LICENSE */; };
 		8B3A93BA13F4936D00A6DC78 /* NSData+NXOAuth2.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B3A93A113F4936D00A6DC78 /* NSData+NXOAuth2.m */; };
@@ -324,6 +325,7 @@
 		43EF406D11D3FFF800B1F700 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		43FF9C7312270E9F00ADE53C /* en */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = en; path = Classes/ShareKit/Localization/en.lproj/Localizable.strings; sourceTree = SOURCE_ROOT; };
 		43FF9C7512270EB900ADE53C /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = Classes/ShareKit/Localization/de.lproj/Localizable.strings; sourceTree = SOURCE_ROOT; };
+		8B1B59BA13F5EEC700DD5360 /* SHKFavoriteSharers.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = SHKFavoriteSharers.plist; sourceTree = "<group>"; };
 		8B3A939A13F4925100A6DC78 /* SHKPosterous.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SHKPosterous.h; path = Posterous/SHKPosterous.h; sourceTree = "<group>"; };
 		8B3A939B13F4925100A6DC78 /* SHKPosterous.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SHKPosterous.m; path = Posterous/SHKPosterous.m; sourceTree = "<group>"; };
 		8B3A939F13F4936D00A6DC78 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
@@ -357,7 +359,7 @@
 		8B3A93E013F4BC9000A6DC78 /* SHKDeviantArt.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHKDeviantArt.m; sourceTree = "<group>"; };
 		8B3A93E213F4BE0500A6DC78 /* SHKSharer+MultipartPost.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SHKSharer+MultipartPost.h"; sourceTree = "<group>"; };
 		8B3A93E313F4BE0500A6DC78 /* SHKSharer+MultipartPost.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "SHKSharer+MultipartPost.m"; sourceTree = "<group>"; };
-		8BE7C0BE13F5A9680020C24C /* SHKInstagramCameraPlus.h */ = {isa = PBXFileReference; fileEncoding = 4; path = SHKInstagramCameraPlus.h; sourceTree = "<group>"; };
+		8BE7C0BE13F5A9680020C24C /* SHKInstagramCameraPlus.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHKInstagramCameraPlus.h; sourceTree = "<group>"; };
 		8BE7C0BF13F5A9680020C24C /* SHKInstagramCameraPlus.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHKInstagramCameraPlus.m; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* ShareKit-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "ShareKit-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -623,6 +625,7 @@
 			isa = PBXGroup;
 			children = (
 				43A536EC11DBE3B9004A1712 /* SHKConfig.h */,
+				8B1B59BA13F5EEC700DD5360 /* SHKFavoriteSharers.plist */,
 				43A536AD11DBE3B9004A1712 /* Customize UI */,
 				43A5367211DBE3B9004A1712 /* Core */,
 				43A536B511DBE3B9004A1712 /* Sharers */,
@@ -1098,6 +1101,7 @@
 				4379F2C21291AC9700D2A41E /* SHKEvernote.md in Resources */,
 				3B06B64512EF841800FC0583 /* FBDialog.bundle in Resources */,
 				8B3A93B913F4936D00A6DC78 /* LICENSE in Resources */,
+				8B1B59BB13F5EEC700DD5360 /* SHKFavoriteSharers.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
