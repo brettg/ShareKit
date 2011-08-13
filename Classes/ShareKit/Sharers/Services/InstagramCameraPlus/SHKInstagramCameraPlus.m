@@ -116,13 +116,6 @@ static BOOL instagramAvailable, cameraPlusAvailable;
                                                             interactionControllerWithURL:fileURL];
   [interactionController retain];
   
-  NSLog(@"annotation %@\nicons %@\nname %@\nURL %@\nUTI %@",
-        interactionController.annotation,
-        interactionController.icons,
-        interactionController.name,
-        interactionController.URL,
-        interactionController.UTI);
-  
   CGRect r = CGRectMake(0, 0, 0, 0);
   [[SHK currentHelper] findRootViewController];
   UIView *v = [SHK currentHelper].rootViewController.view;
